@@ -1,5 +1,6 @@
 import './globals.css';
 import styles from './layout.module.css';
+import Image from 'next/image';
 
 export const metadata = {
     title: 'Personal Website',
@@ -15,7 +16,14 @@ export default function RootLayout({
         <html lang="en">
             <body>
                 <header className={styles.header}>
-                    <div className={styles.icon_navigation}>Hola</div>
+                    <div className={styles.icon_navigation}>
+                        <Image
+                            src={'/barra-de-menus.png'}
+                            alt={'menu'}
+                            width={30}
+                            height={30}
+                        />
+                    </div>
                     <section className={styles.wrapper}>
                         <button className={styles.main_button}>B</button>
                         <nav className={styles.navigation}>
