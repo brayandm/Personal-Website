@@ -790,7 +790,7 @@ export type Experience = Node & {
     /** System stage field */
     stage: Stage;
     startAt: Scalars['String'];
-    tasks: Scalars['Json'];
+    tasks: Array<Scalars['String']>;
     title: Scalars['String'];
     /** The time the document was updated */
     updatedAt: Scalars['DateTime'];
@@ -858,7 +858,7 @@ export type ExperienceCreateInput = {
     createdAt?: InputMaybe<Scalars['DateTime']>;
     endAt: Scalars['String'];
     startAt: Scalars['String'];
-    tasks: Scalars['Json'];
+    tasks?: InputMaybe<Array<Scalars['String']>>;
     title: Scalars['String'];
     updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
@@ -1028,15 +1028,16 @@ export type ExperienceManyWhereInput = {
     startAt_not_starts_with?: InputMaybe<Scalars['String']>;
     /** All values starting with the given string. */
     startAt_starts_with?: InputMaybe<Scalars['String']>;
-    /** All values containing the given json path. */
-    tasks_json_path_exists?: InputMaybe<Scalars['String']>;
-    /**
-     * Recursively tries to find the provided JSON scalar value inside the field.
-     * It does use an exact match when comparing values.
-     * If you pass `null` as value the filter will be ignored.
-     * Note: This filter fails if you try to look for a non scalar JSON value!
-     */
-    tasks_value_recursive?: InputMaybe<Scalars['Json']>;
+    /** Matches if the field array contains *all* items provided to the filter and order does match */
+    tasks?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains *all* items provided to the filter */
+    tasks_contains_all?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contain any of the items provided to the filter */
+    tasks_contains_none?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains at least one item provided to the filter */
+    tasks_contains_some?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+    tasks_not?: InputMaybe<Array<Scalars['String']>>;
     title?: InputMaybe<Scalars['String']>;
     /** All values containing the given string. */
     title_contains?: InputMaybe<Scalars['String']>;
@@ -1089,6 +1090,8 @@ export enum ExperienceOrderByInput {
     PublishedAtDesc = 'publishedAt_DESC',
     StartAtAsc = 'startAt_ASC',
     StartAtDesc = 'startAt_DESC',
+    TasksAsc = 'tasks_ASC',
+    TasksDesc = 'tasks_DESC',
     TitleAsc = 'title_ASC',
     TitleDesc = 'title_DESC',
     UpdatedAtAsc = 'updatedAt_ASC',
@@ -1100,7 +1103,7 @@ export type ExperienceUpdateInput = {
     companyUrl?: InputMaybe<Scalars['String']>;
     endAt?: InputMaybe<Scalars['String']>;
     startAt?: InputMaybe<Scalars['String']>;
-    tasks?: InputMaybe<Scalars['Json']>;
+    tasks?: InputMaybe<Array<Scalars['String']>>;
     title?: InputMaybe<Scalars['String']>;
 };
 
@@ -1126,7 +1129,7 @@ export type ExperienceUpdateManyInput = {
     companyUrl?: InputMaybe<Scalars['String']>;
     endAt?: InputMaybe<Scalars['String']>;
     startAt?: InputMaybe<Scalars['String']>;
-    tasks?: InputMaybe<Scalars['Json']>;
+    tasks?: InputMaybe<Array<Scalars['String']>>;
     title?: InputMaybe<Scalars['String']>;
 };
 
@@ -1322,15 +1325,16 @@ export type ExperienceWhereInput = {
     startAt_not_starts_with?: InputMaybe<Scalars['String']>;
     /** All values starting with the given string. */
     startAt_starts_with?: InputMaybe<Scalars['String']>;
-    /** All values containing the given json path. */
-    tasks_json_path_exists?: InputMaybe<Scalars['String']>;
-    /**
-     * Recursively tries to find the provided JSON scalar value inside the field.
-     * It does use an exact match when comparing values.
-     * If you pass `null` as value the filter will be ignored.
-     * Note: This filter fails if you try to look for a non scalar JSON value!
-     */
-    tasks_value_recursive?: InputMaybe<Scalars['Json']>;
+    /** Matches if the field array contains *all* items provided to the filter and order does match */
+    tasks?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains *all* items provided to the filter */
+    tasks_contains_all?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contain any of the items provided to the filter */
+    tasks_contains_none?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains at least one item provided to the filter */
+    tasks_contains_some?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+    tasks_not?: InputMaybe<Array<Scalars['String']>>;
     title?: InputMaybe<Scalars['String']>;
     /** All values containing the given string. */
     title_contains?: InputMaybe<Scalars['String']>;
@@ -1966,14 +1970,14 @@ export type Project = Node & {
     /** User that last published this document */
     publishedBy?: Maybe<User>;
     scheduledIn: Array<ScheduledOperation>;
-    skills: Scalars['Json'];
+    skills: Array<Scalars['String']>;
     /** System stage field */
     stage: Stage;
     /** The time the document was updated */
     updatedAt: Scalars['DateTime'];
     /** User that last updated this document */
     updatedBy?: Maybe<User>;
-    url?: Maybe<Scalars['String']>;
+    url: Scalars['String'];
 };
 
 export type ProjectCreatedByArgs = {
@@ -2034,9 +2038,9 @@ export type ProjectCreateInput = {
     createdAt?: InputMaybe<Scalars['DateTime']>;
     description: Scalars['String'];
     name: Scalars['String'];
-    skills: Scalars['Json'];
+    skills: Array<Scalars['String']>;
     updatedAt?: InputMaybe<Scalars['DateTime']>;
-    url?: InputMaybe<Scalars['String']>;
+    url: Scalars['String'];
 };
 
 export type ProjectCreateManyInlineInput = {
@@ -2166,15 +2170,16 @@ export type ProjectManyWhereInput = {
     scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
     scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
     scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-    /** All values containing the given json path. */
-    skills_json_path_exists?: InputMaybe<Scalars['String']>;
-    /**
-     * Recursively tries to find the provided JSON scalar value inside the field.
-     * It does use an exact match when comparing values.
-     * If you pass `null` as value the filter will be ignored.
-     * Note: This filter fails if you try to look for a non scalar JSON value!
-     */
-    skills_value_recursive?: InputMaybe<Scalars['Json']>;
+    /** Matches if the field array contains *all* items provided to the filter and order does match */
+    skills?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains *all* items provided to the filter */
+    skills_contains_all?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contain any of the items provided to the filter */
+    skills_contains_none?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains at least one item provided to the filter */
+    skills_contains_some?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+    skills_not?: InputMaybe<Array<Scalars['String']>>;
     updatedAt?: InputMaybe<Scalars['DateTime']>;
     /** All values greater than the given value. */
     updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -2223,6 +2228,8 @@ export enum ProjectOrderByInput {
     NameDesc = 'name_DESC',
     PublishedAtAsc = 'publishedAt_ASC',
     PublishedAtDesc = 'publishedAt_DESC',
+    SkillsAsc = 'skills_ASC',
+    SkillsDesc = 'skills_DESC',
     UpdatedAtAsc = 'updatedAt_ASC',
     UpdatedAtDesc = 'updatedAt_DESC',
     UrlAsc = 'url_ASC',
@@ -2232,7 +2239,7 @@ export enum ProjectOrderByInput {
 export type ProjectUpdateInput = {
     description?: InputMaybe<Scalars['String']>;
     name?: InputMaybe<Scalars['String']>;
-    skills?: InputMaybe<Scalars['Json']>;
+    skills?: InputMaybe<Array<Scalars['String']>>;
     url?: InputMaybe<Scalars['String']>;
 };
 
@@ -2256,7 +2263,7 @@ export type ProjectUpdateManyInlineInput = {
 export type ProjectUpdateManyInput = {
     description?: InputMaybe<Scalars['String']>;
     name?: InputMaybe<Scalars['String']>;
-    skills?: InputMaybe<Scalars['Json']>;
+    skills?: InputMaybe<Array<Scalars['String']>>;
     url?: InputMaybe<Scalars['String']>;
 };
 
@@ -2414,15 +2421,16 @@ export type ProjectWhereInput = {
     scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
     scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
     scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-    /** All values containing the given json path. */
-    skills_json_path_exists?: InputMaybe<Scalars['String']>;
-    /**
-     * Recursively tries to find the provided JSON scalar value inside the field.
-     * It does use an exact match when comparing values.
-     * If you pass `null` as value the filter will be ignored.
-     * Note: This filter fails if you try to look for a non scalar JSON value!
-     */
-    skills_value_recursive?: InputMaybe<Scalars['Json']>;
+    /** Matches if the field array contains *all* items provided to the filter and order does match */
+    skills?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains *all* items provided to the filter */
+    skills_contains_all?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contain any of the items provided to the filter */
+    skills_contains_none?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array contains at least one item provided to the filter */
+    skills_contains_some?: InputMaybe<Array<Scalars['String']>>;
+    /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+    skills_not?: InputMaybe<Array<Scalars['String']>>;
     updatedAt?: InputMaybe<Scalars['DateTime']>;
     /** All values greater than the given value. */
     updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -4278,7 +4286,7 @@ export type ExperiencesQuery = {
         companyUrl: string;
         startAt: string;
         endAt: string;
-        tasks: any;
+        tasks: Array<string>;
     }>;
 };
 
@@ -4288,8 +4296,8 @@ export type ProjectsQuery = {
     projects: Array<{
         name: string;
         description: string;
-        url?: string | null;
-        skills: any;
+        url: string;
+        skills: Array<string>;
     }>;
 };
 
