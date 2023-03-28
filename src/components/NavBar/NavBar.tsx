@@ -15,14 +15,14 @@ export default function NavBar() {
             >
                 {menu ? (
                     <Image
-                        src={'/close-button.png'}
+                        src={'/close-button.svg'}
                         alt={'close menu'}
                         width={30}
                         height={30}
                     />
                 ) : (
                     <Image
-                        src={'/barra-de-menus.png'}
+                        src={'/barra-de-menus.svg'}
                         alt={'open menu'}
                         width={30}
                         height={30}
