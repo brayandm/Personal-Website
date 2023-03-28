@@ -2,11 +2,17 @@
 
 import styles from './NavBar.module.css';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function NavBar() {
+    const [menu, setMenu] = useState(false);
+
     return (
         <header className={styles.header}>
-            <div className={styles.icon_navigation}>
+            <div
+                className={styles.icon_navigation}
+                onClick={() => setMenu(!menu)}
+            >
                 <Image
                     src={'/barra-de-menus.png'}
                     alt={'menu'}
@@ -46,7 +52,13 @@ export default function NavBar() {
                         </li>
                     </ul>
                 </nav>
-                <div className={styles.menu}>
+                <div
+                    className={
+                        menu
+                            ? `${styles.menu} ${styles.menu_show}`
+                            : styles.menu
+                    }
+                >
                     <ul>
                         <li>
                             <a className={styles.nav_about} href="#about-id">

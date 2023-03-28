@@ -34,6 +34,7 @@
 }
 
 .navigation {
+    display: none;
     float: right;
     padding: 10px;
     padding-right: 50px;
@@ -103,6 +104,10 @@
     transition: transform 500ms;
 }
 
+.menu_show {
+    transform: translate3d(0, 0, 0);
+}
+
 .menu ul {
     display: flex;
     flex-direction: column;
@@ -139,7 +144,7 @@
     display: inline-block;
     color: var(--color-palette-dark-turquoise);
     right: 20px;
-    top: 20px;
+    top: 30px;
     z-index: 30;
 }
 
@@ -166,5 +171,19 @@
     to {
         transform: translate(0, 0);
         opacity: 1;
+    }
+}
+
+@media (min-width: 750px) {
+    .navigation {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .icon_navigation {
+        display: none;
     }
 }
