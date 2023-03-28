@@ -1,0 +1,10 @@
+query experiences {
+    experiences {
+        title
+        company
+        companyUrl
+        startAt
+        endAt
+        tasks
+    }
+}
