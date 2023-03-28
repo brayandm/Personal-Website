@@ -27,3 +27,29 @@ body {
     transition: background-color 1s;
     background-color: var(--color-palette-background);
 }
+
+body::-webkit-scrollbar {
+    --webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-button:increment,
+body::-webkit-scrollbar-button {
+    display: none;
+}
+
+body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-palette-dark-gray);
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}

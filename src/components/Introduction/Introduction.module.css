@@ -1,0 +1,60 @@
+.presentation {
+    margin-left: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: 20px;
+}
+
+.presentation {
+    transition: opacity 1s;
+}
+
+.presentation h1 {
+    color: var(--color-palette-dark-turquoise);
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-left: 3px;
+    animation: fade-in-up 1s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+}
+
+.presentation h2 {
+    color: var(--color-palette-light-gray);
+    font-size: 60px;
+    animation: fade-in-up 1s;
+    animation-delay: 2.2s;
+    animation-fill-mode: both;
+}
+
+.presentation h3 {
+    color: var(--color-palette-gray);
+    font-size: 60px;
+    margin-bottom: 25px;
+    animation: fade-in-up 1s;
+    animation-delay: 2.4s;
+    animation-fill-mode: both;
+}
+
+.presentation p {
+    color: var(--color-palette-gray);
+    font-size: 18px;
+    max-width: 555px;
+    margin-bottom: 50px;
+    padding-left: 4px;
+    animation: fade-in-up 1s;
+    animation-delay: 2.6s;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-in-up {
+    from {
+        transform: translate3d(0, 40px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
