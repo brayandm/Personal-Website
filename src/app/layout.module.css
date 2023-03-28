@@ -67,25 +67,25 @@
 }
 
 .nav_about {
-    animation: fade-in-down 1s;
+    animation: fade-in-down 1s ease;
     animation-delay: 1s;
     animation-fill-mode: both;
 }
 
 .nav_experience {
-    animation: fade-in-down 1s;
+    animation: fade-in-down 1s ease;
     animation-delay: 1.2s;
     animation-fill-mode: both;
 }
 
 .nav_work {
-    animation: fade-in-down 1s;
+    animation: fade-in-down 1s ease;
     animation-delay: 1.4s;
     animation-fill-mode: both;
 }
 
 .nav_contact {
-    animation: fade-in-down 1s;
+    animation: fade-in-down 1s ease;
     animation-delay: 1.6s;
     animation-fill-mode: both;
 }
@@ -100,65 +100,14 @@
     }
 }
 
-@keyframes fade-out {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-
-    10% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    80% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    90% {
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(0);
-        opacity: 0;
-    }
-}
-
 @keyframes fade-in-down {
     from {
-        transform: translate3d(0, -40px, 0);
+        transform: translate(0, -40px);
+        opacity: 0;
     }
 
     to {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-right {
-    from {
-        transform: translate3d(-10px, 0, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-up {
-    from {
-        transform: translate3d(0, 40px, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
+        transform: translate(0, 0);
         opacity: 1;
     }
 }
