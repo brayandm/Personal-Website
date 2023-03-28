@@ -25,5 +25,5 @@ body {
     height: 100%;
     flex-direction: column;
     transition: background-color 1s;
-    background-color: var(--color-palette-darker-background);
+    background-color: var(--color-palette-background);
 }
