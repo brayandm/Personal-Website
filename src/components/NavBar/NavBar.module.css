@@ -102,6 +102,7 @@
     text-align: center;
     transform: translate3d(80vw, 0, 0);
     transition: transform 500ms;
+    padding-top: 40px;
 }
 
 .menu_show {
@@ -137,6 +138,24 @@
 .menu ul li a:hover {
     transition: color 500ms;
     color: var(--color-palette-dark-turquoise);
+}
+
+.menu_nav div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_nav h1 {
+    font-size: 20px;
+    color: var(--color-palette-light-turquoise);
+    text-align: center;
+}
+
+.menu_nav h2 {
+    font-size: 20px;
+    color: var(--color-palette-light-gray);
+    text-align: center;
 }
 
 .icon_navigation {

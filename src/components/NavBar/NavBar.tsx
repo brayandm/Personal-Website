@@ -13,12 +13,21 @@ export default function NavBar() {
                 className={styles.icon_navigation}
                 onClick={() => setMenu(!menu)}
             >
-                <Image
-                    src={'/barra-de-menus.png'}
-                    alt={'menu'}
-                    width={30}
-                    height={30}
-                />
+                {menu ? (
+                    <Image
+                        src={'/close-button.png'}
+                        alt={'close menu'}
+                        width={30}
+                        height={30}
+                    />
+                ) : (
+                    <Image
+                        src={'/barra-de-menus.png'}
+                        alt={'open menu'}
+                        width={30}
+                        height={30}
+                    />
+                )}
             </div>
             <section className={styles.wrapper}>
                 <button className={styles.main_button}>B</button>
@@ -61,7 +70,10 @@ export default function NavBar() {
                 >
                     <ul>
                         <li>
-                            <a className={styles.nav_about} href="#about-id">
+                            <a
+                                className={`${styles.nav_about} ${styles.menu_nav}`}
+                                href="#about-id"
+                            >
                                 <div>
                                     <h1>01.</h1>
                                     <h2>About</h2>
@@ -70,7 +82,7 @@ export default function NavBar() {
                         </li>
                         <li>
                             <a
-                                className={styles.nav_experience}
+                                className={`${styles.nav_experience} ${styles.menu_nav}`}
                                 href="#experience-id"
                             >
                                 <div>
@@ -80,7 +92,10 @@ export default function NavBar() {
                             </a>
                         </li>
                         <li>
-                            <a className={styles.nav_work} href="#work-id">
+                            <a
+                                className={`${styles.nav_work} ${styles.menu_nav}`}
+                                href="#work-id"
+                            >
                                 <div>
                                     <h1>03.</h1>
                                     <h2>Work</h2>
@@ -89,7 +104,7 @@ export default function NavBar() {
                         </li>
                         <li>
                             <a
-                                className={styles.nav_contact}
+                                className={`${styles.nav_contact} ${styles.menu_nav}`}
                                 href="#contact-id"
                             >
                                 <div>
