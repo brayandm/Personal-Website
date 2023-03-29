@@ -2,8 +2,6 @@
     width: 100%;
     overflow: hidden;
     box-shadow: 0px 5px 5px var(--color-palette-dark-background);
-    animation: fade-in 1s;
-    animation-fill-mode: both;
 }
 
 .header {
@@ -23,9 +21,6 @@
     background-color: var(--color-palette-background);
     border: 3px solid var(--color-palette-light-turquoise);
     transition: transform 1s;
-    animation: fade-in 2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
 }
 
 .main_button:hover {
@@ -65,30 +60,6 @@
 .navigation ul li a:hover {
     transition: color 500ms;
     color: var(--color-palette-dark-turquoise);
-}
-
-.nav_about {
-    animation: fade-in-down 1s ease;
-    animation-delay: 1s;
-    animation-fill-mode: both;
-}
-
-.nav_experience {
-    animation: fade-in-down 1s ease;
-    animation-delay: 1.2s;
-    animation-fill-mode: both;
-}
-
-.nav_work {
-    animation: fade-in-down 1s ease;
-    animation-delay: 1.4s;
-    animation-fill-mode: both;
-}
-
-.nav_contact {
-    animation: fade-in-down 1s ease;
-    animation-delay: 1.6s;
-    animation-fill-mode: both;
 }
 
 .menu {
