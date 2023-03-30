@@ -26,6 +26,7 @@ body {
     flex-direction: column;
     transition: background-color 1s;
     background-color: var(--color-palette-background);
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {

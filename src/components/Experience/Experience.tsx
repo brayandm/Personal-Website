@@ -15,9 +15,10 @@ export default function Experience({ experiences }: Props) {
 
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ margin: '0px 0px -600px 0px' }}
+            transition={{ duration: 2 }}
         >
             <div id="experience-id" className={styles.experience}>
                 <div className={styles.experience_container}>

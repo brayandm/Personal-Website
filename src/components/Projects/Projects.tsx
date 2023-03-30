@@ -12,8 +12,9 @@ interface Props {
 export default function Projects({ projects }: Props) {
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: 300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ margin: '0px 0px -600px 0px' }}
             transition={{ duration: 1.5 }}
         >
             <div id="work-id" className={styles.work}>

@@ -7,21 +7,28 @@ import { motion } from 'framer-motion';
 export default function About() {
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
+            initial={{ rotate: 180, scale: 1 }}
+            whileInView={{ rotate: 360, scale: 1 }}
+            viewport={{ once: true, margin: '0px 0px -600px 0px' }}
+            transition={{ type: 'spring', stiffness: 80 }}
         >
-            <div id="about-id" className={styles.about}>
-                <div className={styles.about_text}>
-                    <div className={styles.about_init}>
-                        <div>
-                            <h2>01. </h2>
-                            <h1>About Me</h1>
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ margin: '0px 0px -600px 0px' }}
+                transition={{ duration: 1.5 }}
+            >
+                <div id="about-id" className={styles.about}>
+                    <div className={styles.about_text}>
+                        <div className={styles.about_init}>
+                            <div>
+                                <h2>01. </h2>
+                                <h1>About Me</h1>
+                            </div>
+                            <div className={styles.separator}></div>
                         </div>
-                        <div className={styles.separator}></div>
-                    </div>
-                    <p>
-                        {`Hello! My name is Brayan and I'm a computer science student
+                        <p>
+                            {`Hello! My name is Brayan and I'm a computer science student
                     at Harbour.Space University. Lover of competitive
                     programming and mathematics. Contestant in several
                     international programming competitions obtaining medals and
@@ -30,15 +37,16 @@ export default function About() {
                     programming and algorithms, as well as having a great
                     passion for learning new things in the art of computer
                     programming.`}
-                    </p>
+                        </p>
+                    </div>
+                    <Image
+                        src="/picture.jpg"
+                        alt="picture"
+                        width={300}
+                        height={300}
+                    />
                 </div>
-                <Image
-                    src="/picture.jpg"
-                    alt="picture"
-                    width={300}
-                    height={300}
-                />
-            </div>
+            </motion.div>
         </motion.div>
     );
 }

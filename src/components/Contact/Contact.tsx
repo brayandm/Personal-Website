@@ -7,9 +7,10 @@ import { motion } from 'framer-motion';
 export default function Contact() {
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, rotate: 180, scale: 0 }}
+            whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
             transition={{ duration: 1.5 }}
+            viewport={{ margin: '0px 0px -400px 0px' }}
             className={styles.contact_container}
         >
             <div id="contact-id" className={styles.contact}>
