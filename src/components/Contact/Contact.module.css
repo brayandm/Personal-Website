@@ -4,6 +4,7 @@
     flex-direction: row;
     align-items: center;
     transition: opacity 1s;
+    padding-top: 200px;
 }
 
 .contact_container {
