@@ -29,7 +29,6 @@ export default function Experience({ experiences }: Props) {
                         {experiences?.experiences.map((experience, index) => (
                             <button
                                 key={index}
-                                id="experience-button-backend"
                                 className={
                                     selectedExperience == index
                                         ? `${styles.experience_button} ${styles.clicked}`
