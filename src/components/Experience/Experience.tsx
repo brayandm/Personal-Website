@@ -2,24 +2,15 @@
 
 import { ExperiencesQuery } from '@/generated/graphql';
 import styles from './Experience.module.css';
-import { sdk } from '@/graphql/client';
 import { useState } from 'react';
 import Image from 'next/image';
 
-export default function Experience() {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [experiences, setExperiences] = useState<
-        ExperiencesQuery | undefined
-    >();
-    const [selectedExperience, setSelectedExperience] = useState(0);
+interface Props {
+    experiences: ExperiencesQuery;
+}
 
-    if (!isLoaded) {
-        sdk.experiences().then((res) => {
-            setExperiences(res);
-            setIsLoaded(true);
-        });
-        return <></>;
-    }
+export default function Experience({ experiences }: Props) {
+    const [selectedExperience, setSelectedExperience] = useState(0);
 
     return (
         <div id="experience-id" className={styles.experience}>
