@@ -22,25 +22,24 @@ export default function Projects({ projects }: Props) {
                 </p>
             </div>
 
-            {/* <div class="work-all">
-                <div class="work-row">
-                    <div class="work-item">
-                        <i
+            <div className={styles.work_all}>
+                <div className={styles.work_row}>
+                    {projects?.projects.map((project, index) => (
+                        <div key={index} className={styles.work_item}>
+                            {/* <i
                             class="fa fa-folder-o work-folder fa-2x"
                             aria-hidden="true"
-                        ></i>
-                        <h1>CP-snippets</h1>
-                        <h2>
-                            A library of algorithms for competitive programming
-                        </h2>
-                        <div class="work-tags-container">
-                            <div class="work-tags">
-                                <p>C++</p>
-                                <p>Algorithms</p>
-                                <p>Data Structures</p>
+                        ></i> */}
+                            <h1>{project.name}</h1>
+                            <h2>{project.description}</h2>
+                            <div className={styles.work_tags_container}>
+                                <div className={styles.work_tags}>
+                                    {project.skills.map((skill, index) => (
+                                        <p key={index}>{skill}</p>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                        <a
+                            {/* <a
                             href="https://github.com/brayandm/CP-snippets"
                             target="_blank"
                         >
@@ -48,10 +47,11 @@ export default function Projects({ projects }: Props) {
                                 class="fa fa-external-link work-icon fa-lg"
                                 aria-hidden="true"
                             ></i>
-                        </a>
-                    </div>
+                        </a> */}
+                        </div>
+                    ))}
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 }

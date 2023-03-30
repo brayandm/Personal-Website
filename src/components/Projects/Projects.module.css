@@ -5,6 +5,7 @@
     padding-left: 100px;
     padding-top: 200px;
     transition: opacity 1s;
+    width: 90vw;
 }
 
 .work .work_init {
@@ -37,6 +38,8 @@
 .work_row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .work_item {
