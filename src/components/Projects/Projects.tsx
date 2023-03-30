@@ -14,7 +14,7 @@ export default function Projects({ projects }: Props) {
         <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5 }}
         >
             <div id="work-id" className={styles.work}>
                 <div className={styles.work_text}>

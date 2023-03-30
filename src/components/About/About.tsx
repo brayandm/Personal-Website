@@ -9,7 +9,7 @@ export default function About() {
         <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5 }}
         >
             <div id="about-id" className={styles.about}>
                 <div className={styles.about_text}>

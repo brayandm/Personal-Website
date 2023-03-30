@@ -9,7 +9,7 @@ export default function Contact() {
         <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5 }}
             className={styles.contact_container}
         >
             <div id="contact-id" className={styles.contact}>
