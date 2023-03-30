@@ -43,15 +43,15 @@ export default function Projects({ projects }: Props) {
                                     ))}
                                 </div>
                             </div>
-                            {/* <a
-                            href="https://github.com/brayandm/CP-snippets"
-                            target="_blank"
-                        >
-                            <i
-                                class="fa fa-external-link work-icon fa-lg"
-                                aria-hidden="true"
-                            ></i>
-                        </a> */}
+                            <a href={project.url} target="_blank">
+                                <Image
+                                    className={styles.work_icon}
+                                    src="/link.svg"
+                                    alt="link"
+                                    width={25}
+                                    height={25}
+                                />
+                            </a>
                         </div>
                     ))}
                 </div>

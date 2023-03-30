@@ -74,8 +74,8 @@
 .work_icon {
     color: var(--color-palette-gray);
     position: absolute;
-    top: 40px;
-    right: 30px;
+    top: 30px;
+    right: 20px;
     transition: color 200ms;
 }
 
