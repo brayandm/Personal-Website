@@ -55,6 +55,7 @@ export default function Experience({ experiences }: Props) {
                                         ].title
                                     }
                                 </h1>
+                                <p>&nbsp;</p>
                                 <a
                                     href={
                                         experiences?.experiences[
