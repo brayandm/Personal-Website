@@ -1,5 +1,6 @@
 import { ProjectsQuery } from '@/generated/graphql';
 import styles from './Projects.module.css';
+import Image from 'next/image';
 
 interface Props {
     projects: ProjectsQuery;
@@ -26,10 +27,13 @@ export default function Projects({ projects }: Props) {
                 <div className={styles.work_row}>
                     {projects?.projects.map((project, index) => (
                         <div key={index} className={styles.work_item}>
-                            {/* <i
-                            class="fa fa-folder-o work-folder fa-2x"
-                            aria-hidden="true"
-                        ></i> */}
+                            <Image
+                                className={styles.work_folder}
+                                src="/folder.png"
+                                alt="folder"
+                                width={30}
+                                height={30}
+                            />
                             <h1>{project.name}</h1>
                             <h2>{project.description}</h2>
                             <div className={styles.work_tags_container}>
