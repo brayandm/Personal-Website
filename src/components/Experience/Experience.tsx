@@ -30,7 +30,11 @@ export default function Experience({ experiences }: Props) {
                             <button
                                 key={index}
                                 id="experience-button-backend"
-                                className={styles.experience_button}
+                                className={
+                                    selectedExperience == index
+                                        ? `${styles.experience_button} ${styles.clicked}`
+                                        : styles.experience_button
+                                }
                                 onClick={() => setSelectedExperience(index)}
                             >
                                 {experience.title}
