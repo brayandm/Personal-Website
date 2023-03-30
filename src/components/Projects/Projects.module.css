@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 0px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 200px;
     margin: 0px auto;
     transition: opacity 1s;
     width: 90vw;

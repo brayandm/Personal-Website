@@ -13,9 +13,13 @@ export default async function Home() {
     return (
         <div className={styles.content}>
             <Introduction />
+            <div className={styles.space} />
             <About />
+            <div className={styles.space} />
             <Experience experiences={experiences} />
+            <div className={styles.space} />
             <Projects projects={projects} />
+            <div className={styles.space} />
             <Contact />
         </div>
     );

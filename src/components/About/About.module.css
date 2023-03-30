@@ -2,11 +2,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 100px;
     padding-left: 100px;
     padding-right: 100px;
-    padding-top: 200px;
-    margin-bottom: 200px;
     transition: opacity 1s;
 }
 
@@ -47,7 +44,8 @@
 @media (max-width: 800px) {
     .about {
         flex-direction: column;
-        margin: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
         padding-left: 0;
         padding-right: 0;
     }
